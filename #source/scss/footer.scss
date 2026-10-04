@@ -1,0 +1,33 @@
+// ПОДВАЛ
+.footer {
+	padding: 15px 0;
+	flex-shrink: 0;
+	& a {
+		color: #204B59;
+	}
+}
+.footer-inner {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.footer__contacts .menu__item {
+	display: block;
+	text-align: right;
+	margin: 0 0 5px 0;
+	&:last-child {
+		margin: 0;
+	}
+}
+.footer__logo {
+	min-height: 66px;
+}
+.footer__contacts .menu__link.phone {
+	background: url(../img/icons/header-phone.svg) no-repeat left center;
+	background-size: 16px 16px;
+}
+.footer__contacts .menu__link.mail {
+	background: url(../img/icons/header-mail.svg) no-repeat left top 1px;
+	background-size: 16px 16px;
+}

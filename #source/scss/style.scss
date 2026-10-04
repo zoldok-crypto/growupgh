@@ -1,0 +1,574 @@
+@import "nullstyle.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "modal.scss";
+@font-face {
+	font-family: 'San Francisco Pro Display Light';
+	src: url('../fonts/SFProDisplay-Light.eot');
+	src: url('../fonts/SFProDisplay-Light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/SFProDisplay-Light.woff') format('woff'),
+	url('../fonts/SFProDisplay-Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'San Francisco Pro Display Bold';
+	src: url('../fonts/SFProDisplay-Bold.eot');
+	src: url('../fonts/SFProDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/SFProDisplay-Bold.woff') format('woff'),
+	url('../fonts/SFProDisplay-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans Regular';
+	src: url('../fonts/OpenSans-Regular.eot');
+	src: url('../fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans-Regular.woff') format('woff'),
+	url('../fonts/OpenSans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url('../fonts/OpenSans-Bold.eot');
+	src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans-Bold.woff') format('woff'),
+	url('../fonts/OpenSans-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'San Francisco Pro Display Regular';
+	src: url('../fonts/SFProDisplay-Regular.eot');
+	src: url('../fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+	url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'San Francisco Pro Display Medium';
+	src: url('../fonts/SFProDisplay-Medium.eot');
+	src: url('../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/SFProDisplay-Medium.woff') format('woff'),
+	url('../fonts/SFProDisplay-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto Regular';
+	src: url('../fonts/Roboto-Regular.eot');
+	src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Roboto-Regular.woff') format('woff'),
+	url('../fonts/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	background: #fffff6;
+	font-family: 'San Francisco Pro Display Light';
+	color: #204B59;
+	display: flex;
+	flex-direction: column;
+}
+h1 {
+	font-size: 48px;
+	line-height: 57px;
+}
+h2 {
+	font-size: 48px;
+	line-height: 57px;
+}
+.page-body {
+	flex: 1 0 auto;
+	padding: 79px 0 30px 0;
+}
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo__icon {
+	width: 38px;
+	height: 47px;
+}
+// ГЛАВНАЯ СТРАНИЦА ПЕРВЫЙ ЭКРАН
+.main-block {
+	margin: 40px 0 57px 0;
+	position: relative;
+}
+.main-img__box {
+	max-width: 993px;
+	& img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
+	}
+}
+.main-block__text {
+	position: absolute;
+	right: 0;
+	top: 80px;
+	text-align: right;
+}
+.link__btn {
+	font-family: 'Open Sans Regular';
+	color: #fff;
+	display: inline-block;
+	background: #6FCF97;
+	padding: 19px 46.5px;
+	font-size: 24px;
+}
+.link-btn__box.main {
+	margin: 100px 0 0 auto;
+}
+// ГЛАВНАЯ СТРАНИЦА ПРЕИМУЩЕСТВА
+.advantages {
+	background: url(../img/adv-img.png) no-repeat bottom 16px right;
+}
+.advantages-list {
+	max-width: 750px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 5px 0 0 0;
+}
+.advantages-list__item {
+	font-size: 24px;
+	line-height: 28.6px;
+	padding: 0 0 0 66px;
+	margin: 0 10px 5px 0;
+	display: inline-block;
+	position: relative;
+	&:last-child {
+		margin: 0;
+	}
+	&.delivery {
+		background: url(../img/icons/adv-delivery.svg) no-repeat left center;
+		max-width: 367px;
+	}
+	&.offers {
+		background: url(../img/icons/adv-offers.svg) no-repeat left -3px center;
+		padding: 30px 0 30px 63px;
+	}
+	&.partners {
+		max-width: 363px;
+		background: url(../img/icons/adv-partners.svg) no-repeat left center;
+	}
+	&.help {
+		max-width: 310px;
+		background: url(../img/icons/adv-help.svg) no-repeat left center;
+	}
+	&.biggest {
+		background: url(../img/icons/adv-biggest.svg) no-repeat left center;
+		padding: 15px 0 15px 66px;
+		margin: 15px 0 0 0;
+	}
+}
+// КАТАЛОГ Greenhouses
+
+.breadcrumbs-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0 0 0;
+}
+.breadcrumb__item {
+	margin: 0 30px 0 0;
+	position: relative;
+	line-height: 19px;
+	padding: 5px 30px 5px 0;
+	&:after {
+		content: '';
+		width: 2px;
+		height: 34px;
+		background: #204B59;
+		position: absolute;
+		right: -2px;
+		top: -2px;
+	}
+	&:last-child {
+		margin: 0;
+		padding: 5px 0px 5px 0;
+		&:after {
+			content: none;
+		}
+	}
+}
+.breadcrumb__link {
+	color: #204B59;
+	font-size: 16px;
+	position: relative;
+	&.current:after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: #BFDCAE;
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+	}
+}
+.greenhouses-box {
+	display: flex;
+	margin: 33px 0 0 0;
+}
+.aside {
+	border-radius: 5px;
+	background: #fff;
+	border: 1px solid #BFDCAE;
+	margin: 0 25px 0 0;
+	height: 100%;
+}
+.aside__item:last-child {
+	border-radius: 5px;
+}
+.aside__link {
+	width: 186px;
+	color: #204B59;
+	display: block;
+	font-size: 16px;
+	padding: 17px 15px 16.2px 15px;
+	&.current {
+		font-family: 'San Francisco Pro Display Bold';
+		color: #fff;
+		background: #BFDCAE;
+		padding: 15px;
+		position: relative;
+	}
+}
+.aside-chevron {
+	display: none;
+	width: 15px;
+	height: 7px;
+	background: url(../img/icons/chevron.svg) no-repeat;
+	background-size: 15px 7px;
+	position: absolute;
+	right: 9px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.greenhouses-card__item {
+	display: flex;
+	margin: 0 0 58px 0;
+	&:last-child {
+		margin: 0;
+	}
+}
+.card__img {
+	box-shadow: 25px -17px 0px -1px #bfdcae;
+	& img {
+		min-width: 100%;
+		max-width: 100%;
+		min-height: 100%;
+		max-height: 100%;
+	}
+}
+.greenhouses-card__img {
+	width: 526px;
+    height: 266px;
+	margin: 16px 56px 0 0;
+	position: relative;
+}
+.greenhouses-card__info {
+	max-width: 385px;
+	font-size: 24px;
+	line-height: 25px;
+}
+.card-item__title {
+	font-size: 24px;
+	font-family: 'San Francisco Pro Display Bold';
+}
+.greenhouse-card__title {
+	margin: 0 0 34px 0;
+}
+.greenhouses-card__parameters {
+	display: grid;
+	grid-template-columns: 69px 117px 66px 71px;
+	grid-column-gap: 20px;
+    grid-row-gap: 34px;
+	word-break: break-all;
+	align-items: center;
+}
+.greenhouses__parameters-item.value {
+	font-family: 'San Francisco Pro Display Bold';
+}
+.greenhouses-card__descr {
+	margin: 34px 0 0 0;
+}
+.card-link__box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	font-family: 'Open Sans Bold';
+	font-size: 18px;
+}
+.card-link {
+	color: #BFDCAE;
+	padding: 9px;
+	border: 1px solid #BFDCAE;
+	width: 100%;
+	text-align: center;
+}
+.greenhouses-link__box {
+	margin: 33px 0 0 0;
+}
+// garden-pavilions
+.page-navigation {
+	font-size: 24px;
+	margin: 25px 0 0 0;
+}
+.page-navigation__item {
+	display: inline-block;
+	padding: 5px 28px 5px 0;
+	margin: 0px 13px 0 0;
+	position: relative;
+	&:after {
+		content: '';
+		width: 2px;
+		height: 29px;
+		background: #204B59;
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 2px;
+	}
+	&:last-child {
+		padding: 5px 0;
+		margin: 0;
+	}
+	&.current {
+		font-family: 'San Francisco Pro Display Bold';
+		&:after {
+			content: none;
+		}
+	}
+}
+.page-navigation__link {
+	color: #204B59;
+	&.back {
+		padding: 0 0 0 48px;
+		background: url(../img/icons/back-arrow.svg) no-repeat left;
+	}
+}
+.garden-pavilions__wrapper {
+	display: flex;
+	margin: 40px 0 0 0;
+}
+.garden-pavilions__img {
+	width: 100%;
+	padding-top: 18.3%;
+	position: relative;
+	margin: 0 52px 0 0;
+	& img {
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.garden-pavilions__table {
+	display: grid;
+	grid-template-columns: 90px 90px 90px 90px 90px 129px 135px;
+	grid-template-rows: 49px 49px 49px 49px;
+}
+.pavilions__table-item {
+	padding: 0px 5px;
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&.table-body {
+		font-family: 'San Francisco Pro Display Medium';
+	}
+	&.green {
+		background: #BFDCAE;
+		color: #fff;
+	}
+}
+.garden-pavilions__descr {
+	font-family: 'San Francisco Pro Display Regular';
+	margin: 22px 0 0 0;
+	font-size: 18px;
+	line-height: 21.5px;
+}
+.link-btn__box.garden-pavilions {
+	text-align: center;
+	margin: 31px 0 0 0;
+}
+.garden-pavilions .link__btn {
+	width: 299px;
+}
+//additional-goods
+.additional-goods__box {
+	display: flex;
+	margin: 32px 0 0 0;
+}
+.additional-goods__wrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-column-gap: 59px;
+	grid-row-gap: 61px;
+}
+.additional-goods__img {
+	width: 100%;
+	position: relative;
+	padding-top: 50.7%;
+	margin: 11px 0 9px 0;
+	& img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+}
+.card-descr {
+	font-size: 24px;
+}
+.additional-goods__title {
+	margin: 0 0 21px 0;
+}
+.additional-goods__descr {
+	margin: 0 0 15px 0;
+}
+.additional-goods__info {
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	height: 100%;
+	width: calc(100% + 25px);
+	line-height: 20px;
+}
+.additional-goods__item {
+	margin: 0 25px 0 0;
+	display: flex;
+	flex-direction: column;
+}
+.card-link__box.additional-goods {
+	width: 100%;
+	margin-top: auto;
+}
+// garden-beds
+.garden-beds__box {
+	margin: 40px 0 0 0;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	gap: 30px;
+}
+.garden-bed__img {
+	width: 100%;
+	position: relative;
+	padding-top: 50.7%;
+	& img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+}
+.garden-bed__item {
+	margin: 0 25px 0 0;
+}
+.garden-beds__descr {
+	margin: 20px 0 0 0;
+	font-size: 18px;
+	line-height: 21.5px;
+}
+.link-btn__box.garden-beds {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0 0 0;
+}
+//story
+.story-inner {
+	margin: 40px 0 0 0;
+}
+.story-title {
+	text-align: center;
+	margin: 0 0 29px 0;
+}
+.story-block {
+	width: 653px;
+	height: 367px;
+	margin: 0 auto;
+	background: #D1D1D1;
+	position: relative;
+}
+	&:before {
+		content: '';
+		width: 299px;
+		height: 363px;
+		background: url(../img/story-dl.svg) no-repeat;
+		position: absolute;
+		left: -195px;
+		bottom: -31px;
+		z-index: -1;
+	}
+	&:after {
+		content: '';
+		width: 316px;
+		height: 336px;
+		background: url(../img/story-dr.svg) no-repeat;
+		position: absolute;
+		right: -192px;
+		bottom: 2px;
+		z-index: -1;
+	}
+}
+.link-btn__box.story {
+	display: flex;
+	justify-content: center;
+	margin: 95px 0 0 0;
+}
+// contacts
+.contacts-inner {
+	margin: 60px 0 0 0;
+}
+.contact__item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.contacts-items__box {
+	display: grid;
+	grid-template-columns: 1.333fr 1.333fr 1.333fr;
+	grid-column-gap: 60px;
+	grid-row-gap: 31px;
+}
+.contact-head {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	margin: 0 0 18px 0;
+}
+.contacts-title {
+	text-align: center;
+	margin: 0 0 27px 0;
+}
+.contact-body {
+	font-size: 18px;
+	margin-top: auto;
+}
+.contact-body a {
+	margin: 12px 0 0 0;
+	display: block;
+	color: #204B59;
+}
+.contacts-img {
+	margin: 0 16px 0 0;
+}
+.link-btn__box.contacts {
+	display: flex;
+	justify-content: center;
+	margin: 30px 0 0 0;
+}
+//modal
+
+@import "media.scss";

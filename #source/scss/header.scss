@@ -1,0 +1,76 @@
+// ШАПКА
+.header {
+	font-family: 'San Francisco Pro Display Light';
+	color: #204B59;
+	padding: 16px 0;
+	& a {
+		color: #204B59;
+	}
+}
+.header__burger {
+	display: none;
+	margin: 0 0 0 auto;
+	z-index: 11;
+	& span {
+		display: block;
+		width: 32px;
+		height: 4px;
+		margin: 0 0 4px 0;
+		background: #204B59;
+		transform: rotate(0);
+		transition: .3s linear;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background: #fffff6;
+}
+.header-inner {
+	display: flex;
+	align-items: center;
+}
+
+.logo__text {
+	max-width: 105px;
+	font-size: 19px;
+	line-height: 22.5px;
+	margin: 0 0 0 10px;
+}
+.menu {
+	margin-left: auto;
+	font-size: 16px;
+}
+.menu__item {
+	display: inline-block;
+	margin: 0 22px 0 0;
+	line-height: 19px;
+	&:last-child {
+		margin: 0;
+	}
+}
+.menu__item.mail {
+	position: relative;
+	bottom: 1px;
+}
+.menu__link.phone {
+	padding: 0 0 0 21px;
+	background: url(../img/icons/header-phone.svg) no-repeat left top 1px;
+	background-size: 16px 16px;
+}
+.menu__link.mail {
+	padding: 0 0 0 21px;
+	background: url(../img/icons/header-mail.svg) no-repeat left top 3px;
+	background-size: 16px 16px;
+}
+.menu__link.dealer {
+	padding: 12px 10px;
+	border: 1px solid #204B59;
+	display: inline-block;
+}
