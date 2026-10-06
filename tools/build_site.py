@@ -176,7 +176,7 @@ HOW_TO_ORDER = [
 
 NAV = [("catalog.html", "Catalogue overview")] + \
       [(r["page"], r["nav"]) for r in RANGES.values()] + \
-      [("catalog-addons.html", "Roof windows & add-ons"), ("catalog-gardenbeds.html", "Garden Beds")]
+      [("catalog-addons.html", "Roof windows & add‑ons"), ("catalog-gardenbeds.html", "Garden Beds")]
 
 # ----------------------------------------------------------------------- helpers
 
@@ -471,7 +471,7 @@ def index_block():
 				<p class="home-catalog__text">Greenhouse catalogue 2027 — three ranges, 15 models from 1,8 to 4 m wide, roof windows and accessories. Every greenhouse ships as a complete kit with fastenings and instructions.</p>
 				<ul class="range-cards range-cards--home">
 {ranges}				</ul>
-				<p class="home-catalog__links"><a href="/catalog.html">All models and comparison table</a> · <a href="/catalog-addons.html">Roof windows &amp; add-ons</a></p>
+				<p class="home-catalog__links"><a href="/catalog.html">All models and comparison table</a> · <a href="/catalog-addons.html">Roof windows &amp; add‑ons</a></p>
 			</div>
 			<div class="home-order"> <!-- КАК ЗАКАЗАТЬ -->
 				<h2 class="advantages__title">From first message to first harvest:</h2>

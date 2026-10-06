@@ -121,6 +121,51 @@
   object-fit: cover !important;
 }
 
+/* ---------- catalogue sidebar: quiet selection ---------- */
+.catalog-greenhouse .aside__link {
+  position: relative;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.catalog-greenhouse .aside__link:hover {
+  background: #f6faf2;
+}
+
+.catalog-greenhouse .aside__link.current {
+  font-weight: 700;
+  color: #204b59;
+  background: #eef6e7;
+  padding: 17px 15px 16.2px 15px;
+}
+
+.catalog-greenhouse .aside__link.current::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #bfdcae;
+}
+
+.catalog-greenhouse .aside__item:first-child .aside__link.current::before {
+  border-top-left-radius: 5px;
+}
+
+.catalog-greenhouse .aside__item:last-child .aside__link.current::before {
+  border-bottom-left-radius: 5px;
+}
+
+@media screen and (max-width: 840px) {
+  .catalog-greenhouse .aside__link.current {
+    background: none;
+    padding: 11px;
+  }
+  .catalog-greenhouse .aside__link.current::before {
+    display: none;
+  }
+}
+
 /* ---------- tables ---------- */
 .table-scroll {
   overflow-x: auto;
