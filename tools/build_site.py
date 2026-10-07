@@ -176,7 +176,7 @@ HOW_TO_ORDER = [
 
 NAV = [("catalog.html", "Catalogue overview")] + \
       [(r["page"], r["nav"]) for r in RANGES.values()] + \
-      [("catalog-addons.html", "Roof windows & add‑ons"), ("catalog-gardenbeds.html", "Garden Beds")]
+      [("catalog-addons.html", "Roof windows & add‑ons")]
 
 # ----------------------------------------------------------------------- helpers
 
@@ -451,12 +451,12 @@ def index_block():
 						</a>
 					</li>
 ''' for r in RANGES.values())
-    ranges += '''					<li class="range-card">
-						<a href="catalog-gardenbeds.html" class="range-card__link">
-							<img src="img/cat/card3-img2.jpg" alt="Garden beds" loading="lazy">
-							<span class="range-card__code">Garden beds</span>
-							<span class="range-card__name">Wooden garden beds</span>
-							<span class="range-card__summary">impregnated Swedish pine · 28 mm board</span>
+    ranges += f'''					<li class="range-card">
+						<a href="catalog-addons.html" class="range-card__link">
+							<img src="{IMG}roof-window.jpg" alt="Roof windows and add-ons" loading="lazy">
+							<span class="range-card__code">04 · Add-ons</span>
+							<span class="range-card__name">Roof windows and accessories</span>
+							<span class="range-card__summary">windows for every width · auto-opener · tapes</span>
 						</a>
 					</li>
 '''
@@ -514,7 +514,8 @@ MENU = '''<ul class="menu header__menu">
 
 REDIRECTS = {
     "story.html": "media.html",
-    "garden-beds.html": "catalog-gardenbeds.html",
+    "garden-beds.html": "catalog.html",
+    "catalog-gardenbeds.html": "catalog.html",
     "garden-pavilions.html": "catalog.html",
     "additional goods.html": "catalog-addons.html",
 }
@@ -530,16 +531,6 @@ def normalize_headers():
                         '<a href="catalog.html" class="link__btn">Watch catalogue</a>')
         if s2 != s:
             p.write_text(s2, encoding="utf-8")
-
-
-def update_gardenbeds():
-    p = ROOT / "catalog-gardenbeds.html"
-    s = p.read_text(encoding="utf-8")
-    s = re.sub(r'\t\t\t\t<aside class="aside">.*?</aside>\n', aside("catalog-gardenbeds.html"), s, count=1, flags=re.S)
-    if 'css/catalog-2027.css' not in s:
-        s = s.replace('<link rel="stylesheet" href="css/swiper-bundle.min.css">',
-                      '<link rel="stylesheet" href="css/swiper-bundle.min.css">\n\t<link rel="stylesheet" href="css/catalog-2027.css">')
-    p.write_text(s, encoding="utf-8")
 
 
 def write_redirects():
@@ -558,7 +549,6 @@ if __name__ == "__main__":
     hub_page()
     addons_page()
     update_index()
-    update_gardenbeds()
     write_redirects()
     normalize_headers()
     print("built", len(MODELS), "models")
