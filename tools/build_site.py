@@ -243,7 +243,7 @@ def aside(current):
             items.append(f'\t\t\t\t\t\t<li class="aside__item"><a href="#" class="aside__link current">'
                          f'{e(label)}<span class="aside-chevron"></span></a></li>')
         else:
-            items.append(f'\t\t\t\t\t\t<li class="aside__item"><a href="/{href}" class="aside__link">'
+            items.append(f'\t\t\t\t\t\t<li class="aside__item"><a href="{href}" class="aside__link">'
                          f'{e(label)}</a></li>')
     return ('\t\t\t\t<aside class="aside">\n\t\t\t\t\t<ul class="aside__list">\n'
             + "\n".join(items) + '\n\t\t\t\t\t</ul>\n\t\t\t\t</aside>\n')
@@ -276,7 +276,7 @@ def catalog_main(current, label, h2, intro, body, chip_items=None):
 def model_tile(m, link=True):
     rng = RANGES[m["range"]]
     spec = f'{m["width"]} × {m["height"]} · {m["profile"] if m["profile"] != "pine" else "pine"}'
-    href = f'/{rng["page"]}#{m["slug"]}' if link else "#"
+    href = f'{rng["page"]}#{m["slug"]}' if link else "#"
     return f'''						<li class="model-grid__item">
 							<a href="{href}">
 								<img src="{IMG}{m["slug"]}.jpg" alt="{e(m["name"])}" loading="lazy">
@@ -326,7 +326,7 @@ def range_page(key):
 
 def hub_page():
     ranges = "".join(f'''						<li class="range-card">
-							<a href="/{r["page"]}" class="range-card__link">
+							<a href="{r["page"]}" class="range-card__link">
 								<img src="{IMG}{r["hero"]}.jpg" alt="{e(r["name"])}" loading="lazy">
 								<span class="range-card__code">{r["code"]} · {e(r["short"])}</span>
 								<span class="range-card__name">{e(r["h2"])}</span>
@@ -335,7 +335,7 @@ def hub_page():
 						</li>
 ''' for r in RANGES.values())
     ranges += f'''						<li class="range-card">
-							<a href="/catalog-addons.html" class="range-card__link">
+							<a href="catalog-addons.html" class="range-card__link">
 								<img src="{IMG}roof-window.jpg" alt="Roof windows and add-ons" loading="lazy">
 								<span class="range-card__code">04 · Add-ons</span>
 								<span class="range-card__name">Roof windows and accessories</span>
@@ -346,12 +346,12 @@ def hub_page():
     grid = ""
     for key, r in RANGES.items():
         grid += (f'\t\t\t\t\t<h3 class="card-item__title model-grid__title">'
-                 f'<a href="/{r["page"]}">{r["code"]} · {e(r["name"])}</a></h3>\n'
+                 f'<a href="{r["page"]}">{r["code"]} · {e(r["name"])}</a></h3>\n'
                  f'\t\t\t\t\t<ul class="model-grid">\n'
                  + "".join(model_tile(m) for m in MODELS if m["range"] == key)
                  + '\t\t\t\t\t</ul>\n')
     rows = "".join(
-        f'\t\t\t\t\t\t\t\t<tr><td><a href="/{RANGES[m["range"]]["page"]}#{m["slug"]}">{e(m["name"])}</a></td>'
+        f'\t\t\t\t\t\t\t\t<tr><td><a href="{RANGES[m["range"]]["page"]}#{m["slug"]}">{e(m["name"])}</a></td>'
         f'<td>{e(RANGES[m["range"]]["short"])}</td><td>{e(m["width"])}</td><td>{e(m["height"])}</td>'
         f'<td>{e(m["profile"] if m["profile"] != "pine" else "Pine")}</td>'
         f'<td>{e("2 – 6 m" if m["range"] == "casa" else "2 – 14 m, +2 m")}</td>'
@@ -443,7 +443,7 @@ def addons_page():
 
 def index_block():
     ranges = "".join(f'''					<li class="range-card">
-						<a href="/{r["page"]}" class="range-card__link">
+						<a href="{r["page"]}" class="range-card__link">
 							<img src="{IMG}{r["hero"]}.jpg" alt="{e(r["name"])}" loading="lazy">
 							<span class="range-card__code">{r["code"]} · {e(r["short"])}</span>
 							<span class="range-card__name">{e(r["h2"])}</span>
@@ -452,7 +452,7 @@ def index_block():
 					</li>
 ''' for r in RANGES.values())
     ranges += '''					<li class="range-card">
-						<a href="/catalog-gardenbeds.html" class="range-card__link">
+						<a href="catalog-gardenbeds.html" class="range-card__link">
 							<img src="img/cat/card3-img2.jpg" alt="Garden beds" loading="lazy">
 							<span class="range-card__code">Garden beds</span>
 							<span class="range-card__name">Wooden garden beds</span>
@@ -471,7 +471,7 @@ def index_block():
 				<p class="home-catalog__text">Greenhouse catalogue 2027 — three ranges, 15 models from 1,8 to 4 m wide, roof windows and accessories. Every greenhouse ships as a complete kit with fastenings and instructions.</p>
 				<ul class="range-cards range-cards--home">
 {ranges}				</ul>
-				<p class="home-catalog__links"><a href="/catalog.html">All models and comparison table</a> · <a href="/catalog-addons.html">Roof windows &amp; add‑ons</a></p>
+				<p class="home-catalog__links"><a href="catalog.html">All models and comparison table</a> · <a href="catalog-addons.html">Roof windows &amp; add‑ons</a></p>
 			</div>
 			<div class="home-order"> <!-- КАК ЗАКАЗАТЬ -->
 				<h2 class="advantages__title">From first message to first harvest:</h2>
@@ -493,8 +493,8 @@ def update_index():
         start = s.index('\t\t\t<div class="greenhouses-cards__wrapper">')
     end = s.rindex('\t\t</div>', 0, s.index('\t</main>'))
     s = s[:start] + index_block() + s[end:]
-    s = s.replace('<a href="/catalog-greenhouses.html" class="link__btn main-link__btn">Watch catalogue</a>',
-                  '<a href="/catalog.html" class="link__btn main-link__btn">Watch catalogue</a>')
+    s = s.replace('<a href="catalog-greenhouses.html" class="link__btn main-link__btn">Watch catalogue</a>',
+                  '<a href="catalog.html" class="link__btn main-link__btn">Watch catalogue</a>')
     if 'css/catalog-2027.css' not in s:
         s = s.replace('<link rel="stylesheet" href="css/swiper-bundle.min.css">',
                       '<link rel="stylesheet" href="css/swiper-bundle.min.css">\n\t<link rel="stylesheet" href="css/catalog-2027.css">')
@@ -502,10 +502,10 @@ def update_index():
 
 
 MENU = '''<ul class="menu header__menu">
-						<li class="menu__item"><a href="/catalog.html" class="menu__link">CATALOGUE</a></li>
+						<li class="menu__item"><a href="catalog.html" class="menu__link">CATALOGUE</a></li>
 						<li class="menu__item"><a href="#" data-popup-target="contacts" class="menu__link">GET PRICE</a></li>
-						<li class="menu__item"><a href="/media.html" class="menu__link">MEDIA</a></li>
-						<li class="menu__item"><a href="/contacts.html" class="menu__link">CONTACTS</a></li>
+						<li class="menu__item"><a href="media.html" class="menu__link">MEDIA</a></li>
+						<li class="menu__item"><a href="contacts.html" class="menu__link">CONTACTS</a></li>
 						<li class="menu__item"><a href="https://www.facebook.com/profile.php?id=144515878738514" target="_blank" class="menu__link">FACEBOOK</a></li>
 						<li class="menu__item mail"><a href="mailto:sales@growupgh.com" class="menu__link mail">sales@growupgh.com</a></li>
 						<li class="menu__item phone"><a href="tel:+48572094244" class="menu__link phone">+48 572 094 244</a></li>
@@ -526,8 +526,8 @@ def normalize_headers():
             continue
         s = p.read_text(encoding="utf-8")
         s2 = re.sub(r'<ul class="menu header__menu">.*?</ul>', MENU, s, count=1, flags=re.S)
-        s2 = s2.replace('<a href="/catalog-greenhouses.html" class="link__btn">Watch catalogue</a>',
-                        '<a href="/catalog.html" class="link__btn">Watch catalogue</a>')
+        s2 = s2.replace('<a href="catalog-greenhouses.html" class="link__btn">Watch catalogue</a>',
+                        '<a href="catalog.html" class="link__btn">Watch catalogue</a>')
         if s2 != s:
             p.write_text(s2, encoding="utf-8")
 
@@ -546,10 +546,10 @@ def write_redirects():
     for src, dst in REDIRECTS.items():
         (ROOT / src).write_text(
             f'<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8">\n'
-            f'<meta http-equiv="refresh" content="0; url=/{dst}">\n'
+            f'<meta http-equiv="refresh" content="0; url={dst}">\n'
             f'<link rel="canonical" href="https://growupgh.com/{dst}">\n'
             f'<title>Redirecting…</title></head>\n'
-            f'<body><a href="/{dst}">{dst}</a></body></html>\n', encoding="utf-8")
+            f'<body><a href="{dst}">{dst}</a></body></html>\n', encoding="utf-8")
 
 
 if __name__ == "__main__":
