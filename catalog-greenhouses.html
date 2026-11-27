@@ -5,13 +5,6 @@
 	<meta name="description" content="Impregnated Swedish pine frame with a pitched roof and a roof window. The warm, classic look for a garden that is lived in.">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W4J56JVR');</script>
-<!-- End Google Tag Manager -->
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico">
@@ -20,10 +13,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4J56JVR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 	<header class="header"> <!-- ШАПКА -->
 		<div class="header-box">
 			<div class="container">
@@ -287,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<img src="img/icons/logo.svg" alt="logo" class="logo__icon">
 					<span class="logo__text">GrowUp Greenhouses</span>
 				</a>
-				<span class="footer__copy"><a href="conf.html">Confidential policy</a></span>
+				<span class="footer__copy"><a href="privacy.html">Privacy &amp; cookies</a> · <a href="#" data-cookie-settings>Cookie settings</a></span>
 				<span class="footer__copy"><a href="about.html">CZYSTE POLE Sp. z O. O.</a></span>
 				<div class="footer__contacts">
 					<li class="menu__item mail"><a href="mailto:sales@growupgh.com" class="menu__link mail">sales@growupgh.com</a></li>
@@ -298,19 +287,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</footer>
 	<div class="modal-form" data-popup-open="contacts">
 		<div class="modal-head">
-			We are very thankful for your interest
+			Get a price offer
 			<div class="close-modal"></div>
 		</div>
 		<div class="modal-body">
-			<form>
-				<p>Please, contact us via phone, whatsapp or email:</p>
-				<div class="modal-body__contacts">
-				<a href="tel:+48572094244" class="menu__link phone">+48 572 094 244</a>
-				<a href="mailto:sales@growupgh.com" class="menu__link mail">sales@growupgh.com</a>
-				</div>
-				<!--<input type="tel" name="tel" placeholder="Phone">
-				<input type="email" name="mail" placeholder="Email">
-				<button>Send</button>-->
+			<form id="lead-form" class="lead-form" action="send.php" method="post" novalidate>
+				<p class="lead-form__intro">Leave your contact and we will come back with prices and lead times, usually within one working day.</p>
+				<input type="text" name="name" placeholder="Your name *" required autocomplete="name" maxlength="100">
+				<input type="tel" name="phone" placeholder="Phone (with country code)" autocomplete="tel" maxlength="40">
+				<input type="email" name="email" placeholder="E-mail" autocomplete="email" maxlength="120">
+				<textarea name="message" rows="3" placeholder="What are you interested in? Range, size, quantity, delivery country…" maxlength="2000"></textarea>
+				<input type="hidden" name="product" value="">
+				<input type="hidden" name="page" value="">
+				<input type="hidden" name="ts" value="">
+				<div class="lead-form__hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+				<button type="submit">Send request</button>
+				<p class="lead-form__status" role="status"></p>
+				<p class="lead-form__legal">Your data controller is Czyste Pole sp. z o.o. We use the details above only to answer this request. <a href="privacy.html">Privacy policy</a>.</p>
+				<p class="lead-form__alt">Or contact us directly: <a href="tel:+48572094244">+48 572 094 244</a> · <a href="mailto:sales@growupgh.com">sales@growupgh.com</a></p>
 			</form>
 		</div>
 	</div>
@@ -319,5 +313,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>    
 	<script src="js/main.js"></script>
+	<script src="js/site.js"></script>
 </body>
 </html>
