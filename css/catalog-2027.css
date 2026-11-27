@@ -548,3 +548,106 @@
     height: 240px;
   }
 }
+
+/* ---------- contacts: sales team ---------- */
+.team-title {
+  font-family: 'HelveticaNeueCyr';
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+
+.team-intro {
+  text-align: center;
+  font-size: 16px;
+  margin: 0 0 32px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 24px;
+  margin: 0 0 64px 0;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card__photo {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #bfdcae;
+  color: #fff;
+  font-family: 'HelveticaNeueCyr';
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 160px;
+}
+
+.team-card__photo::before {
+  content: attr(data-initials);
+  position: absolute;
+  inset: 0;
+  text-align: center;
+}
+
+.team-card__photo img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-card__name {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 4px 0;
+}
+
+.team-card__role {
+  font-size: 14px;
+  opacity: 0.7;
+  margin: 0 0 12px 0;
+}
+
+.team-card__links a {
+  display: block;
+  color: #204b59;
+  font-size: 15px;
+  margin: 0 0 6px 0;
+  word-break: break-all;
+}
+
+.team-card__wa {
+  display: inline-block !important;
+  margin-top: 4px !important;
+  padding: 4px 12px;
+  border: 1px solid #bfdcae;
+  border-radius: 999px;
+  font-size: 13px !important;
+}
+
+.contact-body p {
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 1023px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .team-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
